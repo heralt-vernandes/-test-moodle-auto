@@ -26,11 +26,14 @@ chmod -R 755 /var/www/html/moodle
 # Configure PHP 8.1
 PHPINI="/etc/php/8.1/apache2/php.ini"
 
-sed -i "s/^max_input_vars.*/max_input_vars = 5000/" $PHPINI
-sed -i "s/^memory_limit.*/memory_limit = 512M/" $PHPINI
-sed -i "s/^post_max_size.*/post_max_size = 100M/" $PHPINI
-sed -i "s/^upload_max_filesize.*/upload_max_filesize = 100M/" $PHPINI
+sed -i 's/^;max_input_vars.*/max_input_vars = 5000/' $PHPINI
+sed -i 's/^max_input_vars = .*/max_input_vars = 5000/' $PHPINI
+
+sed -i 's/^memory_limit = .*/memory_limit = 512M/' $PHPINI
+sed -i 's/^post_max_size = .*/post_max_size = 100M/' $PHPINI
+sed -i 's/^upload_max_filesize = .*/upload_max_filesize = 100M/' $PHPINI
 
 systemctl restart apache2
 
 echo "=== WEB SERVER MOODLE SIAP ==="
+
