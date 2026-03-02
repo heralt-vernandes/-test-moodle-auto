@@ -21,25 +21,33 @@ body{
 .card{
   background:#111827;
   width:100%;
-  max-width:420px;
+  max-width:900px;
   border-radius:20px;
-  padding:40px 30px;
+  padding:40px;
   box-shadow:0 20px 40px rgba(0,0,0,0.4);
   border:1px solid #1f2937;
-  text-align:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
   transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-4px);
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
 
 .profile-circle{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   background:#1f2937;
-  margin:0 auto 25px auto;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -48,45 +56,34 @@ body{
   font-weight:700;
 }
 
-h1{
-  font-size:24px;
-  margin-bottom:8px;
+.info h1{
+  font-size:26px;
+  margin-bottom:6px;
 }
 
 .role{
   font-size:14px;
   color:#38bdf8;
-  margin-bottom:20px;
+  margin-bottom:10px;
 }
 
 .description{
   font-size:14px;
   color:#9ca3af;
-  margin-bottom:25px;
-  line-height:1.6;
+  max-width:400px;
 }
 
-.tags{
-  margin-bottom:25px;
-}
-
-.tags span{
-  display:inline-block;
-  background:#0f172a;
-  border:1px solid #1f2937;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:12px;
-  margin:4px;
+.right{
+  text-align:right;
 }
 
 .buttons a{
   display:block;
-  margin:10px 0;
-  padding:12px;
-  border-radius:10px;
+  margin:8px 0;
+  padding:10px 20px;
+  border-radius:8px;
   text-decoration:none;
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
   background:#38bdf8;
   color:#0b1220;
@@ -98,22 +95,33 @@ h1{
 }
 
 .socials{
-  margin-top:20px;
+  margin-top:15px;
 }
 
 .socials a{
   color:#9ca3af;
-  margin:0 12px;
-  font-size:20px;
+  margin-left:15px;
+  font-size:18px;
 }
 
 .socials a:hover{
   color:#38bdf8;
 }
 
-@media(max-width:480px){
+@media(max-width:768px){
   .card{
-    padding:30px 20px;
+    flex-direction:column;
+    text-align:center;
+  }
+  .left{
+    flex-direction:column;
+  }
+  .right{
+    text-align:center;
+    margin-top:20px;
+  }
+  .description{
+    max-width:100%;
   }
 }
 
@@ -123,32 +131,29 @@ h1{
 
 <div class="card">
 
-  <div class="profile-circle">GI</div>
-
-  <h1>Gerald Ibrani</h1>
-  <div class="role">Network Engineer & Linux System Administrator</div>
-
-  <div class="description">
-    Focused on routing architecture, ISP field operations, Linux server deployment, and secure network infrastructure design.
+  <div class="left">
+    <div class="profile-circle">GI</div>
+    <div class="info">
+      <h1>Gerald Ibrani</h1>
+      <div class="role">Network Engineer & Linux System Administrator</div>
+      <div class="description">
+        Specialized in routing architecture, Linux server deployment, ISP field operations, and secure network infrastructure design.
+      </div>
+    </div>
   </div>
 
-  <div class="tags">
-    <span>Mikrotik</span>
-    <span>Linux</span>
-    <span>OpenWRT</span>
-    <span>OPNsense</span>
-  </div>
+  <div class="right">
+    <div class="buttons">
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-  <div class="buttons">
-    <a href="about.html">About</a>
-    <a href="skills.html">Skills</a>
-    <a href="experience.html">Experience</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <div class="socials">
-    <a href="mailto:geraldibrani@geraldstudio.my.id"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://github.com/heralt-vernandes" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <div class="socials">
+      <a href="mailto:geraldibrani@geraldstudio.my.id"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/heralt-vernandes" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
   </div>
 
 </div>
