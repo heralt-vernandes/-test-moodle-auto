@@ -5,17 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gerald | Network & Server Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:#0f172a;color:#e2e8f0;line-height:1.7}
 nav{position:fixed;width:100%;top:0;background:rgba(15,23,42,0.9);backdrop-filter:blur(10px);padding:15px 40px;display:flex;justify-content:space-between;align-items:center;z-index:1000}
 nav a{color:#e2e8f0;text-decoration:none;margin-left:20px;font-size:14px}
 nav a:hover{color:#38bdf8}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.hero{padding-top:140px;padding-bottom:80px;text-align:center}
 .hero h1{font-size:48px;font-weight:700}
 .hero span{color:#38bdf8}
-.hero p{margin-top:20px;font-size:18px;max-width:750px;color:#94a3b8}
-.btn{display:inline-block;margin-top:30px;padding:12px 22px;border-radius:8px;background:#38bdf8;color:#0f172a;text-decoration:none;font-weight:600;transition:0.3s}
+.hero p{margin:20px auto 30px auto;font-size:18px;max-width:800px;color:#94a3b8}
+.hero-tags{margin-top:20px}
+.hero-tags span{display:inline-block;background:#1e293b;border:1px solid #334155;padding:8px 14px;margin:6px;border-radius:20px;font-size:13px}
+.socials{margin-top:25px}
+.socials a{color:#94a3b8;margin:0 10px;font-size:20px;transition:0.3s}
+.socials a:hover{color:#38bdf8}
+.btn{display:inline-block;margin-top:25px;padding:12px 22px;border-radius:8px;background:#38bdf8;color:#0f172a;text-decoration:none;font-weight:600;transition:0.3s}
 .btn:hover{background:#0ea5e9}
 section{max-width:1100px;margin:100px auto;padding:0 20px}
 h2{font-size:30px;margin-bottom:40px;color:#38bdf8}
@@ -43,15 +49,26 @@ footer{text-align:center;padding:40px 20px;background:#0f172a;border-top:1px sol
 
 <div class="hero">
 <h1>Hi, I’m <span>Gerald</span></h1>
-<p>Vocational High School graduate majoring in Computer and Network Engineering. Experienced in network routing, Linux server administration, virtualization, and infrastructure design. Passionate about building stable, scalable, and secure systems.</p>
+<p>Network & Server Engineer with hands-on experience in routing, Linux infrastructure, virtualization, and ISP field operations. I design, deploy, and maintain stable network systems.</p>
 
+<div class="hero-tags">
+<span>Mikrotik Specialist</span>
+<span>Linux Server Admin</span>
+<span>Proxmox Virtualization</span>
+<span>Fiber Optic Field Tech</span>
+</div>
+
+<div class="socials">
+<a href="mailto:geraldibrani@geraldstudio.my.id"><i class="fa-solid fa-envelope"></i></a>
+<a href="https://github.com/heralt-vernandes" target="_blank"><i class="fa-brands fa-github"></i></a>
+</div>
 </div>
 
 <section id="about" class="fade">
 <h2>About Me</h2>
 <div class="card">
-<p>I have hands-on experience in configuring and managing network infrastructure, deploying Linux-based servers, and designing virtualized environments using Proxmox. My background includes field technical work in ISP environments, giving me practical understanding of fiber optic deployment, network devices, and real-world troubleshooting scenarios.</p>
-<p style="margin-top:15px;">I work across multiple router operating systems and understand both enterprise and small-scale infrastructure setups. My focus areas include routing architecture, firewall configuration, server deployment, and performance optimization.</p>
+<p>I am a Vocational High School graduate majoring in Computer and Network Engineering. My experience spans from hands-on fiber optic installation in ISP environments to server deployment and network architecture design.</p>
+<p style="margin-top:15px;">I work with multiple router operating systems including Mikrotik, OpenWRT, and OPNsense. I manage Linux servers, deploy virtual machines using Proxmox, and handle website and database hosting with proper network segmentation and security policies.</p>
 </div>
 </section>
 
@@ -78,15 +95,15 @@ footer{text-align:center;padding:40px 20px;background:#0f172a;border-top:1px sol
 <div class="grid">
 <div class="card">
 <h3>ISP Reseller Internship – Field Technician</h3>
-<p>Worked directly in the field handling fiber optic installations, ONT configuration, router setup, cable management, signal measurement, and resolving customer connectivity issues. Gained strong practical understanding of optical networking and ISP operations.</p>
+<p>Handled fiber optic installations, ONT configuration, router setup, cable management, signal measurement, and troubleshooting customer connectivity issues in real environments.</p>
 </div>
 <div class="card">
 <h3>Server & Infrastructure Deployment</h3>
-<p>Deployed Linux servers for website and database hosting using Proxmox virtualization. Configured network bridges, internal routing between VMs, firewall policies, and system monitoring for stability and performance.</p>
+<p>Deployed Linux servers and virtual machines using Proxmox for hosting websites and databases. Configured routing between VMs, firewall rules, and system optimization.</p>
 </div>
 <div class="card">
 <h3>Routing & Network Architecture Projects</h3>
-<p>Designed and implemented routing environments using Mikrotik, OpenWRT, and OPNsense. Configured VLAN segmentation, NAT, firewall rules, bandwidth management, and multi-network integration.</p>
+<p>Designed and implemented routing solutions using Mikrotik, OpenWRT, and OPNsense including VLAN segmentation, NAT, firewall policies, and bandwidth management.</p>
 </div>
 </div>
 </section>
@@ -96,15 +113,15 @@ footer{text-align:center;padding:40px 20px;background:#0f172a;border-top:1px sol
 <div class="grid">
 
 <div class="card">
-<h3>Email</h3>
-<p>You can reach me directly via email for professional inquiries.</p>
-<a href="mailto:geraldibrani@geraldstudio.my.id" class="btn" style="margin-top:15px;display:inline-block;">geraldibrani@geraldstudio.my.id</a>
+<h3><i class="fa-solid fa-envelope"></i> Email</h3>
+<p>For professional inquiries:</p>
+<a href="mailto:geraldibrani@geraldstudio.my.id" class="btn">geraldibrani@geraldstudio.my.id</a>
 </div>
 
 <div class="card">
-<h3>GitHub</h3>
-<p>Explore my repositories, lab experiments, and infrastructure projects.</p>
-<a href="https://github.com/heralt-vernandes" target="_blank" class="btn" style="margin-top:15px;display:inline-block;">github.com/heralt-vernandes</a>
+<h3><i class="fa-brands fa-github"></i> GitHub</h3>
+<p>Explore my repositories and lab projects:</p>
+<a href="https://github.com/heralt-vernandes" target="_blank" class="btn">github.com/heralt-vernandes</a>
 </div>
 
 </div>
