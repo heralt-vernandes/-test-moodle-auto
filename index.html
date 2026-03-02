@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerald | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0f172a;color:#e2e8f0;line-height:1.7}
+nav{position:fixed;width:100%;top:0;background:rgba(15,23,42,0.9);backdrop-filter:blur(10px);padding:15px 40px;display:flex;justify-content:space-between;align-items:center;z-index:1000}
+nav a{color:#e2e8f0;text-decoration:none;margin-left:20px;font-size:14px}
+nav a:hover{color:#38bdf8}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.hero h1{font-size:48px;font-weight:700}
+.hero span{color:#38bdf8}
+.hero p{margin-top:20px;font-size:18px;max-width:600px;color:#94a3b8}
+.btn{display:inline-block;margin-top:30px;padding:12px 22px;border-radius:8px;background:#38bdf8;color:#0f172a;text-decoration:none;font-weight:600;transition:0.3s}
+.btn:hover{background:#0ea5e9}
+section{max-width:1100px;margin:100px auto;padding:0 20px}
+h2{font-size:30px;margin-bottom:40px;color:#38bdf8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{background:#1e293b;padding:25px;border-radius:14px;transition:0.3s;border:1px solid #334155}
+.card:hover{transform:translateY(-8px);border-color:#38bdf8}
+.skills span{display:inline-block;margin:6px;padding:8px 14px;background:#334155;border-radius:20px;font-size:13px}
+footer{text-align:center;padding:40px 20px;background:#0f172a;border-top:1px solid #1e293b;color:#94a3b8}
+.fade{opacity:0;transform:translateY(30px);transition:1s}
+.fade.show{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.hero h1{font-size:36px}}
+</style>
+</head>
+<body><nav>
+<div><strong>Gerald</strong></div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav><div class="hero">
+<h1>Hi, I’m <span>Gerald</span></h1>
+<p>PhD in Accounting with deep interest in networking, cloud systems, virtualization, and AI infrastructure. I build labs, test architectures, and explore performance optimization.</p>
+<a href="#projects" class="btn">View My Work</a>
+</div><section id="about" class="fade">
+<h2>About Me</h2>
+<div class="card">
+<p>I combine academic research background with hands-on technical experimentation. My focus includes virtualized environments, routing design, cloud architecture, and efficient AI model deployment on local systems.</p>
+</div>
+</section><section id="skills" class="fade">
+<h2>Core Skills</h2>
+<div class="card skills">
+<span>Cloud Architecture</span>
+<span>VirtualBox & VM Lab</span>
+<span>Routing & VLAN</span>
+<span>Mikrotik & OpenWRT</span>
+<span>Ubuntu Server</span>
+<span>AI Model Deployment</span>
+<span>Infrastructure Optimization</span>
+</div>
+</section><section id="projects" class="fade">
+<h2>Selected Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Minecraft SMP Infrastructure</h3>
+<p>Configured secure public access, performance tuning, and controlled mod environment for multiplayer stability.</p>
+</div>
+<div class="card">
+<h3>Local LLM Deployment</h3>
+<p>Optimized CPU-based inference, tested lightweight quantized models, and experimented with local AI environments.</p>
+</div>
+<div class="card">
+<h3>Virtual Network Topology Lab</h3>
+<p>Built multi-VM architecture with router, DHCP, VLAN segmentation, and gateway configuration.</p>
+</div>
+</div>
+</section><section id="contact" class="fade">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: your-email@example.com</p>
+<p>GitHub: github.com/yourusername</p>
+<a href="#" class="btn">Download CV</a>
+</div>
+</section><footer>
+<p>© 2026 Gerald. Built with clean HTML, CSS, and vanilla JavaScript.</p>
+</footer><script>
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show');}
+});
+},{threshold:0.2});
+faders.forEach(el=>observer.observe(el));
+</script></body>
+</html>
