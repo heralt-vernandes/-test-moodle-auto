@@ -1,69 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gerald | Network & Server Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0f172a;color:#e2e8f0;line-height:1.7}
-nav{position:fixed;width:100%;top:0;background:rgba(15,23,42,0.95);padding:15px 40px;display:flex;justify-content:space-between;align-items:center}
-nav a{color:#e2e8f0;text-decoration:none;margin-left:20px;font-size:14px}
-nav a:hover{color:#38bdf8}
-.hero{padding-top:160px;padding-bottom:120px;text-align:center;max-width:900px;margin:auto}
-.hero h1{font-size:48px;font-weight:700}
-.hero span{color:#38bdf8}
-.hero p{margin:25px auto;font-size:18px;color:#94a3b8}
-.hero-tags span{display:inline-block;background:#1e293b;border:1px solid #334155;padding:8px 14px;margin:6px;border-radius:20px;font-size:13px}
-.socials{margin-top:30px}
-.socials a{color:#94a3b8;margin:0 12px;font-size:22px}
-.socials a:hover{color:#38bdf8}
-.section-links{margin-top:40px}
-.section-links a{display:inline-block;margin:10px;padding:12px 22px;border-radius:8px;background:#38bdf8;color:#0f172a;text-decoration:none;font-weight:600}
-.section-links a:hover{background:#0ea5e9}
-footer{text-align:center;padding:40px 20px;background:#0f172a;border-top:1px solid #1e293b;color:#94a3b8}
-</style>
-</head>
-<body>
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-<nav>
-<div><strong>Gerald</strong></div>
-<div>
-<a href="about.html">About</a>
-<a href="skills.html">Skills</a>
-<a href="experience.html">Experience</a>
-<a href="contact.html">Contact</a>
-</div>
-</nav>
+export default function GeraldPortfolio() {
+  const [page, setPage] = useState("home");
 
-<div class="hero">
-<h1>Hi, I’m <span>Gerald</span></h1>
-<p>Network Engineer & Linux System Administrator specializing in routing architecture, infrastructure deployment, and secure network design.</p>
+  const NavButton = ({ label, target }) => (
+    <button
+      onClick={() => setPage(target)}
+      className="text-sm hover:text-sky-400 transition"
+    >
+      {label}
+    </button>
+  );
 
-<div class="hero-tags">
-<span>Mikrotik Specialist</span>
-<span>Linux Server Administrator</span>
-<span>Fiber Optic Field Technician</span>
-</div>
+  const SectionWrapper = ({ children }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-5xl mx-auto px-6 py-20"
+    >
+      {children}
+    </motion.div>
+  );
 
-<div class="socials">
-<a href="mailto:geraldibrani@geraldstudio.my.id"><i class="fa-solid fa-envelope"></i></a>
-<a href="https://github.com/heralt-vernandes" target="_blank"><i class="fa-brands fa-github"></i></a>
-</div>
+  return (
+    <div className="min-h-screen bg-slate-900 text-slate-200 font-sans">
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur border-b border-slate-800 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <button
+            onClick={() => setPage("home")}
+            className="font-bold text-lg"
+          >
+            Gerald
+          </button>
+          <div className="flex gap-6">
+            <NavButton label="About" target="about" />
+            <NavButton label="Skills" target="skills" />
+            <NavButton label="Experience" target="experience" />
+            <NavButton label="Contact" target="contact" />
+          </div>
+        </div>
+      </nav>
 
-<div class="section-links">
-<a href="about.html">About Me</a>
-<a href="skills.html">Technical Skills</a>
-<a href="experience.html">Experience</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
+      {/* Content */}
+      <div className="pt-24">
+        {page === "home" && (
+          <SectionWrapper>
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold">
+                Hi, I’m <span className="text-sky-400">Gerald</span>
+              </h1>
+              <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
+                Network Engineer & Linux System Administrator specializing in routing architecture, infrastructure deployment, and secure network design.
+              </p>
 
-<footer>
-<p>© 2026 Gerald | Network Architect & Server Administrator</p>
-</footer>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <span className="bg-slate-800 px-4 py-2 rounded-full text-sm">Mikrotik Specialist</span>
+                <span className="bg-slate-800 px-4 py-2 rounded-full text-sm">Linux Server Admin</span>
+                <span className="bg-slate-800 px-4 py-2 rounded-full text-sm">Fiber Optic Field Tech</span>
+              </div>
 
-</body>
-</html>
+              <div className="mt-10">
+                <button
+                  onClick={() => setPage("contact")}
+                  className="bg-sky-400 text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-sky-500 transition"
+                >
+                  Get In Touch
+                </button>
+              </div>
+            </div>
+          </SectionWrapper>
+        )}
+
+        {page === "about" && (
+          <SectionWrapper>
+            <h2 className="text-3xl font-bold text-sky-400 mb-8">About Me</h2>
+            <div className="bg-slate-800 p-8 rounded-2xl shadow-lg">
+              <p>
+                Vocational High School graduate majoring in Computer and Network Engineering. Experienced in ISP field operations, fiber optic installations, and server infrastructure deployment.
+              </p>
+              <p className="mt-4 text-slate-400">
+                I work with Mikrotik, OpenWRT, OPNsense, and manage Linux servers for hosting and network segmentation with proper firewall policies.
+              </p>
+            </div>
+          </SectionWrapper>
+        )}
+
+        {page === "skills" && (
+          <SectionWrapper>
+            <h2 className="text-3xl font-bold text-sky-400 mb-8">Technical Skills</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                "Mikrotik Routing & Firewall",
+                "Linux Server Administration",
+                "OpenWRT & OPNsense",
+                "Windows Server Management",
+                "Fiber Optic Installation",
+                "Network Architecture Design",
+                "VLAN, NAT, DHCP, Bandwidth Management",
+                "Network Troubleshooting",
+              ].map((skill, index) => (
+                <div
+                  key={index}
+                  className="bg-slate-800 p-6 rounded-2xl shadow hover:shadow-sky-400/20 transition"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </SectionWrapper>
+        )}
+
+        {page === "experience" && (
+          <SectionWrapper>
+            <h2 className="text-3xl font-bold text-sky-400 mb-8">Professional Experience</h2>
+            <div className="space-y-6">
+              <div className="bg-slate-800 p-6 rounded-2xl shadow">
+                <h3 className="font-semibold">ISP Reseller Internship – Field Technician</h3>
+                <p className="text-slate-400 mt-2">
+                  Handled fiber optic installations, router configuration, and real-world network troubleshooting.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 p-6 rounded-2xl shadow">
+                <h3 className="font-semibold">Server & Infrastructure Deployment</h3>
+                <p className="text-slate-400 mt-2">
+                  Deployed Linux servers and virtual machines, configured routing between VMs, and implemented firewall rules.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 p-6 rounded-2xl shadow">
+                <h3 className="font-semibold">Routing & Network Architecture Projects</h3>
+                <p className="text-slate-400 mt-2">
+                  Designed VLAN segmentation, NAT policies, and bandwidth management using multi-platform router systems.
+                </p>
+              </div>
+            </div>
+          </SectionWrapper>
+        )}
+
+        {page === "contact" && (
+          <SectionWrapper>
+            <h2 className="text-3xl font-bold text-sky-400 mb-8">Contact</h2>
+            <div className="bg-slate-800 p-8 rounded-2xl shadow space-y-4">
+              <p>Email: geraldibrani@geraldstudio.my.id</p>
+              <p>GitHub: github.com/heralt-vernandes</p>
+            </div>
+          </SectionWrapper>
+        )}
+      </div>
+
+      <footer className="border-t border-slate-800 text-center py-6 text-slate-500">
+        © 2026 Gerald | Network Engineer & Linux System Administrator
+      </footer>
+    </div>
+  );
+}
