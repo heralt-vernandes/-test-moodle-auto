@@ -35,8 +35,8 @@
       </p>
       <div class="buttons" style="justify-content:center; margin-top:20px; flex-wrap:wrap;">
         <a href="mailto:geraldibrani@geraldstudio.my.id" class="btn btn-primary">Email</a>
-        <a href="" target="_blank" class="btn btn-outline">WhatsApp</a>
-        <a href="" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/geraldibrani" target="_blank" class="btn btn-outline">LinkedIn</a>
         <a href="https://github.com/heralt-vernandes" target="_blank" class="btn btn-outline">GitHub</a>
       </div>
       <p style="margin-top:25px; font-size:14px; color:#94a3b8;">
@@ -50,5 +50,29 @@
   © 2026 Gerald Ibrani — Infrastructure & Network Specialist
 </footer>
 
-</body>
-</html>
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-3px)';
+        button.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
+      });
+
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0)';
+        button.style.boxShadow = 'none';
+      });
+    });
+
+    // Copy email to clipboard with feedback
+    const emailBtn = document.querySelector('a[href^="mailto:"]');
+    if (emailBtn) {
+      emailBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const email = this.getAttribute('href').replace('mailto:', '');
+        navigator.clipboard.writeText(email).then(() => {
+          this.textContent = 'Email Copied ✓';
+          setTimeout(() => {
+            this.textContent = 'Email';
+            window.location.href = 'mailto:' + emai
