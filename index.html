@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gerald Ibrani | Network Engineer</title>
+  <title>About | Gerald Ibrani</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-
-<nav>
+<body><nav>
   <h2>Gerald</h2>
   <ul>
     <li><a href="about.html">About</a></li>
@@ -16,68 +13,27 @@
     <li><a href="experience.html">Experience</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="left fade-up">
-      <h1>Hi, I'm <span>Gerald Ibrani</span></h1>
-      <p id="typing" style="margin-top:10px; font-weight:600; color:#38bdf8;"></p>
-      <p>
-        Experienced in network routing, Linux and Windows server administration,
-        infrastructure deployment, and enterprise network security implementation.
-      </p>
-      <div class="buttons">
-        <a href="experience.html" class="btn btn-primary">View Experience</a>
-        <a href="https://github.com/heralt-vernandes" target="_blank" class="btn btn-outline">GitHub</a>
-      </div>
-    </div>
-
-    <div class="card fade-up" style="animation-delay:0.3s;">
-      <h3>Core Expertise</h3>
-      <ul>
-        <li>Network Routing (MikroTik)</li>
-        <li>Linux Server Administration</li>
-        <li>Windows Server & System Support</li>
-        <li>Network Security & Firewall Management</li>
-        <li>Fiber Optic Deployment</li>
-      </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav><section class="hero">
+  <div class="hero-content" style="grid-template-columns:1fr; max-width:800px;">
+    <div class="left">
+      <h1>About Me</h1>
+      <p>I focus on building reliable network and server infrastructure with strong attention to stability and security.</p>
+      <p>Comfortable managing Linux and Windows server environments including deployment, configuration, monitoring, and troubleshooting.</p>
+      <p>Long term direction centered on infrastructure architecture, scalability, and performance optimization.</p>
     </div>
   </div>
-</section>
-
-<footer>
+</section><footer>
   © 2026 Gerald Ibrani — Infrastructure & Network Specialist
-</footer>
-
-<script>
-// Fade-up animation trigger
-window.addEventListener("load", () => {
-  document.querySelectorAll(".fade-up").forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    setTimeout(() => {
-      el.style.transition = "all 0.8s ease";
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    }, 200);
-  });
-
-  // Typing effect
-  const text = "Infrastructure & Network Engineer";
-  const typingEl = document.getElementById("typing");
-  let index = 0;
-
-  function type() {
-    if (index < text.length) {
-      typingEl.innerHTML += text.charAt(index);
-      index++;
-      setTimeout(type, 60);
-    }
-  }
-  type();
+</footer><script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector("nav ul");
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
 });
-</script>
-
-</body>
+</script></body>
 </html>
