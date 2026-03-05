@@ -19,3 +19,7 @@ CREATE USER 'heralt'@'%' IDENTIFIED BY 'heralt';
 GRANT ALL PRIVILEGES ON moodle.* TO 'heralt'@'%';
 FLUSH PRIVILEGES;
 EOF
+
+clear
+
+history -c
